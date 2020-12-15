@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="searching.BinarySearchTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-12-15T06:56:09" hostname="LAPTOP-QHDI3UO5" time="0.153">
+  <properties/>
+  <testcase name="itShouldReturnIndexWhenKeyIsPresent(int[], int, int, int, int)[1]" classname="searching.BinarySearchTest" time="0.119"/>
+  <testcase name="itShouldReturnIndexWhenKeyIsPresent(int[], int, int, int, int)[2]" classname="searching.BinarySearchTest" time="0.003"/>
+  <testcase name="itShouldReturnIndexWhenKeyIsPresent(int[], int, int, int, int)[3]" classname="searching.BinarySearchTest" time="0.004"/>
+  <testcase name="itShouldReturnIndexWhenKeyIsPresent(int[], int, int, int, int)[4]" classname="searching.BinarySearchTest" time="0.004"/>
+  <system-out><![CDATA[I am here
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
