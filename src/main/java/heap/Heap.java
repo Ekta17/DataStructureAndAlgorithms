@@ -73,6 +73,4 @@ public class Heap {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
-
-
 }
