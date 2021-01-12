@@ -31,13 +31,13 @@ public class SinglyLinkedList<T> {
 		this.head = null;
 	}
 
-	public void addANodeToHead(T data){
+	public void addANodeToHead(T data) {
 		Node n = new Node(data);
 		addANodeToHead(n);
 	}
 
-	public void addANodeToHead(Node n){
-		if(!isEmpty())
+	public void addANodeToHead(Node n) {
+		if (!isEmpty())
 			n.next = head;
 		head = n;
 		size++;
@@ -45,6 +45,10 @@ public class SinglyLinkedList<T> {
 
 	public void addANodeToEnd(T data) {
 		Node n = new Node(data);
+		addANodeToEnd(n);
+	}
+
+	public void addANodeToEnd(Node n) {
 
 		if (isEmpty()) {
 			head = n;
@@ -59,17 +63,33 @@ public class SinglyLinkedList<T> {
 		size++;
 	}
 
-	public void addANodeToEnd(Node n) {
+	public void addANodeAtKthLocation(T data, int index) {
+		Node n = new Node(data);
+		addANodeAtKthLocation(n, index);
+	}
 
-		if (isEmpty()) {
+	public void addANodeAtKthLocation(Node n, int index) {
+
+		if(isEmpty() && index == 0)
 			head = n;
-		} else {
-			Node curr = head;
-
-			while (curr.next != null)
+		else if (isEmpty() && index > 0)
+			throw new IndexOutOfBoundsException("Index provided is out of bound");
+		else {
+			Node curr = head, prev = null;
+			int i = 0;
+			while (i != index && curr.next != null) {
+				prev = curr;
 				curr = curr.next;
+				i++;
+			}
 
-			curr.next = n;
+			if (i == index) {
+				prev.next = n;
+				n.next = curr;
+			} else if(i+1 == index){
+				curr.next = n;
+			}else
+				throw new IndexOutOfBoundsException("Index provided is out of bound");
 		}
 		size++;
 	}
@@ -91,10 +111,10 @@ public class SinglyLinkedList<T> {
 
 	public void deleteNodeAtIndex(int index) {
 		if (!isEmpty()) {
-			if(index == 0){
+			if (index == 0) {
 				head = head.next;
 				size--;
-			}else {
+			} else {
 				int i = 0;
 				Node curr = head, prev = null;
 				while (curr != null) {
@@ -113,7 +133,7 @@ public class SinglyLinkedList<T> {
 			System.out.println("List is empty");
 	}
 
-	public List<T> getAllDataIntoList(){
+	public List<T> getAllDataIntoList() {
 		List<T> allNodeData = new ArrayList<>();
 		if (!isEmpty()) {
 			for (Node curr = head; curr != null; curr = curr.next)
