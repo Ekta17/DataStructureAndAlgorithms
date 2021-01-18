@@ -1,4 +1,6 @@
-package trees.search;
+package graph.search;
+
+import graph.Node;
 
 public class Util {
 	public static boolean compareWithKey(Node n, int key){

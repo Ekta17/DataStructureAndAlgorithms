@@ -1,4 +1,7 @@
-package trees.search;
+package graph.search;
+
+import graph.Graph;
+import graph.Node;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,7 +10,7 @@ public class BreathFirstSearch {
 
 	public boolean search(Graph graph, int key) {
 		for (Node n : graph.nodes) {
-			if (!n.visited)
+			if (!n.isVisited)
 				return search(n, key);
 		}
 		return false;
@@ -15,7 +18,7 @@ public class BreathFirstSearch {
 
 	public boolean search(Node n, int key) {
 		Queue<Node> queue = new LinkedList<>();
-		n.visited = true;
+		n.isVisited = true;
 		queue.add(n);
 
 		while (!queue.isEmpty()) {
@@ -23,8 +26,8 @@ public class BreathFirstSearch {
 			if (Util.compareWithKey(i, key))
 				return true;
 			for (Node child : i.children) {
-				if (!child.visited) {
-					child.visited = true;
+				if (!child.isVisited) {
+					child.isVisited = true;
 					queue.add(child);
 				}
 			}

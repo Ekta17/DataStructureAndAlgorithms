@@ -1,9 +1,12 @@
-package trees.search;
+package graph.search;
+
+import graph.Graph;
+import graph.Node;
 
 public class DepthFirstSearch {
 	public boolean search(Graph graph, int key) {
 		for (Node n : graph.nodes) {
-			if (!n.visited)
+			if (!n.isVisited)
 				return search(n, key);
 		}
 		return false;
@@ -14,9 +17,9 @@ public class DepthFirstSearch {
 			return false;
 		if (Util.compareWithKey(n, key))
 			return true;
-		n.visited = true;
+		n.isVisited = true;
 		for (Node child : n.children)
-			if(!child.visited)
+			if(!child.isVisited)
 				return search(child, key);
 
 		return false;

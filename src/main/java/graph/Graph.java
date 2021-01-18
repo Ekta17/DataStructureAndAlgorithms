@@ -1,4 +1,4 @@
-package trees.search;
+package graph;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +21,9 @@ public class Graph {
 		nodes = new ArrayList<>(n);
 	}
 
-	public void addEdge(Node n1, Node n2){
+	public void addEdge(Node n1, Node n2, boolean isCyclic){
 		n1.children.add(n2);
-		n2.children.add(n1);
+		if(isCyclic)
+			n2.children.add(n1);
 	}
 }

@@ -1,5 +1,7 @@
-package trees.search;
+package graph.search;
 
+import graph.Graph;
+import graph.TestHelper;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

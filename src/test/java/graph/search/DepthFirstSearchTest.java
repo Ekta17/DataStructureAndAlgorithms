@@ -1,11 +1,14 @@
-package trees.search;
+package graph.search;
 
+import graph.Graph;
+import graph.TestHelper;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DepthFirstSearchTest implements TestHelper{
+class DepthFirstSearchTest implements TestHelper {
 
 	private static DepthFirstSearch depthFirstSearch;
 
