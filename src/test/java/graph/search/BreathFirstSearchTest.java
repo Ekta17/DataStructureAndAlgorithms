@@ -19,13 +19,13 @@ class BreathFirstSearchTest implements TestHelper {
 
 	@Test
 	public void testBFSWhenKeyPresent() {
-		Graph g = createGraph();
+		Graph g = createUndirectedCyclicGraph();
 		assertTrue(breathFirstSearch.search(g, 1));
 	}
 
 	@Test
 	public void testBFSWhenKeyNotPresent() {
-		Graph g = createGraph();
+		Graph g = createUndirectedCyclicGraph();
 		assertFalse(breathFirstSearch.search(g, 10));
 	}
 }

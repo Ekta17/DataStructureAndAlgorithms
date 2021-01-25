@@ -19,13 +19,13 @@ class DepthFirstSearchTest implements TestHelper {
 
 	@Test
 	public void testDFSWhenKeyPresent(){
-		Graph g = createGraph();
+		Graph g = createUndirectedCyclicGraph();
 		assertTrue(depthFirstSearch.search(g, 1));
 	}
 
 	@Test
 	public void testDFSWhenKeyNotPresent(){
-		Graph g = createGraph();
+		Graph g = createUndirectedCyclicGraph();
 		assertFalse(depthFirstSearch.search(g, 10));
 	}
 

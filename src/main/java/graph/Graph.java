@@ -21,9 +21,9 @@ public class Graph {
 		nodes = new ArrayList<>(n);
 	}
 
-	public void addEdge(Node n1, Node n2, boolean isCyclic){
-		n1.children.add(n2);
-		if(isCyclic)
-			n2.children.add(n1);
+	public void addEdge(Node n1, Node n2, boolean isDirected){
+		n1.children.add(n2);//from --> to
+		if(!isDirected)
+			n2.children.add(n1); //to --> from
 	}
 }
