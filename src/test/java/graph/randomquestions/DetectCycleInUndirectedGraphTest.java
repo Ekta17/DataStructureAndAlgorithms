@@ -7,23 +7,23 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DetectCycleInGraphTest implements TestHelper {
-	private static DetectCycleInGraph detectCycleInGraph;
+class DetectCycleInUndirectedGraphTest implements TestHelper {
+	private static DetectCycleInUndirectedGraph detectCycleInUndirectedGraph;
 
 	@BeforeAll
 	public static void init(){
-		detectCycleInGraph = new DetectCycleInGraph();
+		detectCycleInUndirectedGraph = new DetectCycleInUndirectedGraph();
 	}
 
 	@Test
 	void testIsGraphCyclicWhenCyclic() {
 		Graph g = createUndirectedCyclicGraph();
-		assertTrue(detectCycleInGraph.isGraphCyclic(g));
+		assertTrue(detectCycleInUndirectedGraph.isGraphCyclic(g));
 	}
 
 	@Test
 	void testIsGraphCyclicWhenNotCyclic() {
 		Graph g = createUndirectedAcyclicGraph();
-		assertFalse(detectCycleInGraph.isGraphCyclic(g));
+		assertFalse(detectCycleInUndirectedGraph.isGraphCyclic(g));
 	}
 }

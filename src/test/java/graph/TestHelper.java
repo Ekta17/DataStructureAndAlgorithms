@@ -65,28 +65,51 @@ public interface TestHelper {
 		Node n3 = new Node(2);
 		Node n4 = new Node(3);
 		Node n5 = new Node(4);
-		Node n6 = new Node(5);
 
-		Graph g = new Graph(6);
+		Graph g = new Graph(5);
 		g.nodes.add(n1);
 		g.nodes.add(n2);
 		g.nodes.add(n3);
 		g.nodes.add(n4);
 		g.nodes.add(n5);
-		g.nodes.add(n6);
 
-		//0:
-		//1:
+		//0:1
+		//1:2
 		//2:3
-		//3:1
-		//4:0,1
-		//5: 0,2
-		g.addEdge(n3, n4, false);
-		g.addEdge(n4, n2, false);
-		g.addEdge(n5, n1, false);
-		g.addEdge(n5, n2, false);
-		g.addEdge(n6, n1, false);
-		g.addEdge(n6, n3, false);
+		//3:4
+		g.addEdge(n1, n2, true);
+		g.addEdge(n2, n3, true);
+		g.addEdge(n3, n4, true);
+		g.addEdge(n4, n5, true);
+
+		return g;
+	}
+
+	public default Graph createDirectedCyclicGraph(){
+		List<Node> nodes = new ArrayList<>();
+		Node n1 = new Node(0);
+		Node n2 = new Node(1);
+		Node n3 = new Node(2);
+		Node n4 = new Node(3);
+		Node n5 = new Node(4);
+
+		Graph g = new Graph(5);
+		g.nodes.add(n1);
+		g.nodes.add(n2);
+		g.nodes.add(n3);
+		g.nodes.add(n4);
+		g.nodes.add(n5);
+
+		//0:1
+		//1:2
+		//2:0
+		//3:0
+		//4:1
+		g.addEdge(n1, n2, true);
+		g.addEdge(n2, n3, true);
+		g.addEdge(n3, n1, true);
+		g.addEdge(n4, n1, true);
+		g.addEdge(n5, n2, true);
 
 		return g;
 	}

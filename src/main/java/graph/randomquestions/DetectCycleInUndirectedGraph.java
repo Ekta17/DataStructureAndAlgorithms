@@ -3,7 +3,7 @@ package graph.randomquestions;
 import graph.Graph;
 import graph.Node;
 
-public class DetectCycleInGraph {
+public class DetectCycleInUndirectedGraph {
 
 	public boolean isGraphCyclic(Graph graph){
 		for(Node n: graph.nodes) {
@@ -24,5 +24,4 @@ public class DetectCycleInGraph {
 		}
 		return false;
 	}
-
 }
