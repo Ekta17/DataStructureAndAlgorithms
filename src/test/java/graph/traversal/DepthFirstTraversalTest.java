@@ -23,7 +23,7 @@ class DepthFirstTraversalTest implements TestHelper {
 	public void testDFSTraversal() {
 		Graph g = createUndirectedCyclicGraph();
 		List<Integer> dfs = depthFirstTraversal.traverse(g);
-		assertEquals(Arrays.asList(5, 3, 0, 2, 1, 7, 9), dfs);
+		assertEquals(Arrays.asList(0,1,2,3,4), dfs);
 	}
 
 }

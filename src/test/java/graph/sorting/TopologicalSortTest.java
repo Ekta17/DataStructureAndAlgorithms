@@ -26,6 +26,6 @@ class TopologicalSortTest implements TestHelper {
 		Graph g = createDirectedAcyclicGraph();
 		List<Node> actualOrdering = topologicalSort.sort(g);
 		List<Integer> dataFromActualOrdering = actualOrdering.stream().map( x -> x.data).collect(Collectors.toList());
-		assertEquals(Arrays.asList(5, 4, 2, 3, 1, 0), dataFromActualOrdering);
+		assertEquals(Arrays.asList(0,1,2,3,4), dataFromActualOrdering);
 	}
 }

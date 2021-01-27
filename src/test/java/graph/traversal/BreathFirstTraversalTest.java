@@ -23,7 +23,7 @@ class BreathFirstTraversalTest implements TestHelper {
 	public void testBFSTraversal() {
 		Graph g = createUndirectedCyclicGraph();
 		List<Integer> bfs = breathFirstTraversal.traverse(g);
-		assertEquals(Arrays.asList(5, 3, 7, 0, 2, 9, 1), bfs);
+		assertEquals(Arrays.asList(0, 1, 2, 3, 4), bfs);
 	}
 
 }
