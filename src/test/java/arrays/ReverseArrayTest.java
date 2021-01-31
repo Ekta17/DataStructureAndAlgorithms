@@ -16,7 +16,7 @@ class ReverseArrayTest {
 	@Test
 	public void testReverseEvenLengthArray() {
 		int[] arr = {2, 3, 10, 0, 1, 4};
-		int[] actualArr = reverseArray.reverse(arr);
+		int[] actualArr = reverseArray.reverse(arr, 0, arr.length-1);
 		int[] expectedArr = {4, 1, 0, 10, 3, 2};
 		assertArrayEquals(expectedArr, actualArr);
 	}
@@ -24,7 +24,7 @@ class ReverseArrayTest {
 	@Test
 	public void testReverseOddLengthArray() {
 		int[] arr = {2, 3, 10, 1, 4};
-		int[] actualArr = reverseArray.reverse(arr);
+		int[] actualArr = reverseArray.reverse(arr, 0, arr.length-1);
 		int[] expectedArr = {4, 1, 10, 3, 2};
 		assertArrayEquals(expectedArr, actualArr);
 	}
