@@ -28,7 +28,7 @@ class BuyAndSellStockTest {
 		assertEquals(0, actualProfit);
 	}
 
-	/*@Test
+	@Test
 	public void testGetTotalProfitWhenFirstElementNeedsToBeIgnored(){
 		int[] prices = {5, 1, 3, 8, 12, 13};
 		int actualTotalProfit = buyAndSellStock.findTotalProfit(prices);
@@ -39,13 +39,13 @@ class BuyAndSellStockTest {
 	public void testGetTotalProfitWhenPricesInAscendingOrder(){
 		int[] prices = {1, 2, 3, 4, 5};
 		int actualTotalProfit = buyAndSellStock.findTotalProfit(prices);
-		assertEquals(0, actualTotalProfit);
+		assertEquals(4, actualTotalProfit);
 	}
 
 	@Test
 	public void testGetTotalProfitWhenPricesInDescendingOrder(){
 		int[] prices = {5, 4, 3, 2, 1};
 		int actualTotalProfit = buyAndSellStock.findTotalProfit(prices);
-		assertEquals(4, actualTotalProfit);
-	}*/
+		assertEquals(0, actualTotalProfit);
+	}
 }

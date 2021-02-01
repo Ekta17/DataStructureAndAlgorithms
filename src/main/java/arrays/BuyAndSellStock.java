@@ -20,33 +20,25 @@ public class BuyAndSellStock {
 	}
 
 	//https://www.geeksforgeeks.org/stock-buy-sell/
-	/*public int findTotalProfit(int prices[]) {
-		List<Integer> localMinima = new ArrayList<>();
-		List<Integer> localMaxima = new ArrayList<>();
-
-		int i =0;
-		while(i<prices.length-1){
-
-			//find local minima
-			while((i<prices.length-1) && prices[i] >=prices[i+1])
-				i++;
-
-			if(i == prices.length-1)
-				break;
-
-			localMinima.add(prices[i++]);
-
-			//find local maxima
-			while((i<prices.length) && prices[i]<=prices[i-1])
-				i++;
-
-			localMaxima.add(prices[i-1]);
-		}
-		System.out.println("localMinima="+localMinima);
-		System.out.println("localMaxima="+localMaxima);
+	//Design an algorithm to find the maximum profit.
+	// You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+	public int findTotalProfit(int prices[]) {
 		int totalProfit = 0;
-		for(int j = 0; j<localMinima.size();i++)
-			totalProfit += localMaxima.get(j) - localMinima.get(j);
+		int localMinimaIndex = 0;
+
+		for (int i = 1; i < prices.length; i++) {
+
+			//update localMinimaIndex is lesser value element found
+			// current element < previous element
+			if (prices[i] < prices[i - 1])
+				localMinimaIndex = i;
+
+			//sell stock if current element is localMaxima
+			//previous element <= current > next element
+			if (prices[i] >= prices[i - 1] && (i + 1 == prices.length || prices[i] > prices[i + 1]))
+				totalProfit += prices[i] - prices[localMinimaIndex];
+		}
+
 		return totalProfit;
-	}*/
+	}
 }
