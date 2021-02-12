@@ -1,8 +1,6 @@
 package trees.binarytree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Traversal {
 
@@ -46,4 +44,28 @@ public class Traversal {
 		return listOfNodes;
 	}
 
+	Optional<List<List<Integer>>> getLevelOrderBreadthFirstTraversal(Node root) {
+		if (root == null)
+			return Optional.empty();
+
+		Queue<Node> queue = new LinkedList<>();
+		queue.add(root);
+
+		List<List<Integer>> allLevelList = new ArrayList<>();
+		while (!queue.isEmpty()) {
+			int currentLevelSize = queue.size();
+			List<Integer> currentLevelNodes = new ArrayList<>();
+			for(int i=0; i< currentLevelSize; i++){
+				Node n = queue.poll();
+				if(n!=null){
+					currentLevelNodes.add(n.data);
+					queue.add(n.left);
+					queue.add(n.right);
+				}
+			}
+			if(!currentLevelNodes.isEmpty())
+				allLevelList.add(currentLevelNodes);
+		}
+		return Optional.of(allLevelList);
+	}
 }

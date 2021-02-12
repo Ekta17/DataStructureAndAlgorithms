@@ -24,4 +24,21 @@ public class Util {
 			collectNodesAtHeightK(root.right, k - 1, listOfNodes);
 		}
 	}
+
+	int getSizeOfBinaryTree(Node root, int size){
+		if(root==null)
+			return 0;
+		int leftSize = getSizeOfBinaryTree(root.left, size);
+		int rightSize = getSizeOfBinaryTree(root.right, size);
+		size++;
+		return size + leftSize +rightSize;
+	}
+
+	int getMaximumValueElementInBinaryTree(Node root){
+		if(root==null)
+			return Integer.MIN_VALUE;
+		int leftMax = getMaximumValueElementInBinaryTree(root.left);
+		int rightMax = getMaximumValueElementInBinaryTree(root.right);
+		return Math.max(root.data, Math.max(leftMax,rightMax));
+	}
 }

@@ -57,4 +57,43 @@ class UtilTest {
 		assertEquals(expectedValues, actualValues);
 	}
 
+	@Test
+	public void testGetSizeOfBinaryTree1(){
+		Node root = new Node(10);
+		root.left = new Node(20);
+		root.right = new Node(30);
+
+		assertEquals(3, util.getSizeOfBinaryTree(root,0));
+	}
+
+	@Test
+	public void testGetSizeOfBinaryTree2(){
+		Node root = new Node(10);
+		root.left = new Node(20);
+		root.right = new Node(30);
+		root.left.left = new Node(40);
+		root.left.right = new Node(50);
+		root.right.right = new Node(70);
+
+		assertEquals(6, util.getSizeOfBinaryTree(root,0));
+	}
+
+	@Test
+	public void testGetMaximumValueElementInBinaryTree1(){
+		Node root = new Node(10);
+		root.left = new Node(20);
+		root.right = new Node(30);
+		root.left.left = new Node(40);
+		root.left.right = new Node(50);
+		root.right.right = new Node(70);
+		assertEquals(70, util.getMaximumValueElementInBinaryTree(root));
+	}
+
+	public void testGetMaximumValueElementInBinaryTree2(){
+		Node root = new Node(30);
+		root.left = new Node(20);
+		root.right = new Node(10);
+		assertEquals(30, util.getMaximumValueElementInBinaryTree(root));
+	}
+
 }
