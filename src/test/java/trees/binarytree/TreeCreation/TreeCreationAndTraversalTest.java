@@ -1,4 +1,4 @@
-package trees.binarytree.randomQuestions.TreeCreation;
+package trees.binarytree.TreeCreation;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
