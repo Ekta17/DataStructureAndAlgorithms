@@ -4,38 +4,38 @@ import java.util.*;
 
 public class Traversal {
 
-	void inorder(Node root, List<Integer> arr) {
+	public void inorder(TreeNode root, List<Integer> arr) {
 		if (root != null) {
 			inorder(root.left, arr);
-			arr.add(root.data);
+			arr.add(root.val);
 			inorder(root.right, arr);
 		}
 	}
 
-	void preorder(Node root, List<Integer> arr) {
+	public void preorder(TreeNode root, List<Integer> arr) {
 		if (root != null) {
-			arr.add(root.data);
+			arr.add(root.val);
 			preorder(root.left, arr);
 			preorder(root.right, arr);
 		}
 	}
 
-	void postorder(Node root, List<Integer> arr) {
+	public void postorder(TreeNode root, List<Integer> arr) {
 		if (root != null) {
 			postorder(root.left, arr);
 			postorder(root.right, arr);
-			arr.add(root.data);
+			arr.add(root.val);
 		}
 	}
 
-	List<Integer> levelOrderOrBreadthFirst(Node root, LinkedList<Node> queue) {
+	public List<Integer> levelOrderOrBreadthFirst(TreeNode root, LinkedList<TreeNode> queue) {
 		List<Integer> listOfNodes = new ArrayList<>();
 		if (root == null)
 			return listOfNodes;
 		queue.add(root);
 		while (!queue.isEmpty()) {
-			Node temp = queue.poll();
-			listOfNodes.add(temp.data);
+			TreeNode temp = queue.poll();
+			listOfNodes.add(temp.val);
 			if (temp.left != null)
 				queue.add(temp.left);
 			if (temp.right != null)
@@ -44,11 +44,11 @@ public class Traversal {
 		return listOfNodes;
 	}
 
-	Optional<List<List<Integer>>> getLevelOrderBreadthFirstTraversal(Node root) {
+	Optional<List<List<Integer>>> getLevelOrderBreadthFirstTraversal(TreeNode root) {
 		if (root == null)
 			return Optional.empty();
 
-		Queue<Node> queue = new LinkedList<>();
+		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(root);
 
 		List<List<Integer>> allLevelList = new ArrayList<>();
@@ -56,9 +56,9 @@ public class Traversal {
 			int currentLevelSize = queue.size();
 			List<Integer> currentLevelNodes = new ArrayList<>();
 			for(int i=0; i< currentLevelSize; i++){
-				Node n = queue.poll();
+				TreeNode n = queue.poll();
 				if(n!=null){
-					currentLevelNodes.add(n.data);
+					currentLevelNodes.add(n.val);
 					queue.add(n.left);
 					queue.add(n.right);
 				}

@@ -1,7 +1,9 @@
-package trees.binarytree;
+package trees.binarytree.randomQuestions.TreeCreation;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import trees.binarytree.Traversal;
+import trees.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +27,7 @@ class TreeCreationAndTraversalTest {
 	@Test
 	public void testInOrderTraversal() {
 		int[] arr = {1, 2, 3, 4, 5, 6};
-		Node root = createFromArray.insertNodes(arr, null, 0);
+		TreeNode root = createFromArray.insertNodes(arr, null, 0);
 		assertNotNull(root);
 		List<Integer> actualArray = new ArrayList<>(arr.length);
 		traversal.inorder(root, actualArray);
@@ -37,7 +39,7 @@ class TreeCreationAndTraversalTest {
 	@Test
 	public void testPreOrderTraversal() {
 		int[] arr = {1, 2, 3, 4, 5, 6};
-		Node root = createFromArray.insertNodes(arr, null, 0);
+		TreeNode root = createFromArray.insertNodes(arr, null, 0);
 		assertNotNull(root);
 		List<Integer> actualArray = new ArrayList<>(arr.length);
 		traversal.preorder(root, actualArray);
@@ -49,7 +51,7 @@ class TreeCreationAndTraversalTest {
 	@Test
 	public void testPostOrderTraversal() {
 		int[] arr = {1, 2, 3, 4, 5, 6};
-		Node root = createFromArray.insertNodes(arr, null, 0);
+		TreeNode root = createFromArray.insertNodes(arr, null, 0);
 		assertNotNull(root);
 		List<Integer> actualArray = new ArrayList<>(arr.length);
 		traversal.postorder(root, actualArray);
@@ -61,9 +63,9 @@ class TreeCreationAndTraversalTest {
 	@Test
 	public void testLevelOrderTraversal(){
 		int[] arr = {1, 2, 3, 4, 5, 6};
-		Node root = createFromArray.insertNodes(arr, null, 0);
+		TreeNode root = createFromArray.insertNodes(arr, null, 0);
 		assertNotNull(root);
-		LinkedList<Node> queue = new LinkedList<>();
+		LinkedList<TreeNode> queue = new LinkedList<>();
 		List<Integer> actualValues = traversal.levelOrderOrBreadthFirst(root,queue);
 		List<Integer> expectedValues = Arrays.stream(arr).boxed().collect(Collectors.toList());
 		assertEquals(expectedValues, actualValues);

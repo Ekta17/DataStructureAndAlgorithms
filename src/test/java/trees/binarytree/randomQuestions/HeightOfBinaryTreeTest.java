@@ -1,6 +1,8 @@
-package trees.binarytree.randomQuestions.TreeCreation;
+package trees.binarytree.randomQuestions;
 
 import org.junit.jupiter.api.Test;
+import trees.binarytree.TreeNode;
+import trees.binarytree.randomQuestions.HeightOfBinaryTree;
 
 import static org.junit.jupiter.api.Assertions.*;
 

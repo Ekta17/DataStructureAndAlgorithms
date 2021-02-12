@@ -19,9 +19,9 @@ class TraversalTest {
 
 	@Test
 	public void testGetLevelOrderBreadthFirstTraversal1(){
-		Node root = new Node(10);
-		root.right = new Node(20);
-		root.right.right = new Node(30);
+		TreeNode root = new TreeNode(10);
+		root.right = new TreeNode(20);
+		root.right.right = new TreeNode(30);
 
 		Optional<List<List<Integer>>> actualLevelOrder = traversal.getLevelOrderBreadthFirstTraversal(root);
 		List<List<Integer>> expectedOrder = Arrays.asList(
@@ -32,12 +32,12 @@ class TraversalTest {
 
 	@Test
 	public void testGetLevelOrderBreadthFirstTraversal2(){
-		Node root = new Node(10);
-		root.left = new Node(20);
-		root.left.left = new Node(40);
-		root.left.right = new Node(50);
-		root.right = new Node(30);
-		root.right.right = new Node(70);
+		TreeNode root = new TreeNode(10);
+		root.left = new TreeNode(20);
+		root.left.left = new TreeNode(40);
+		root.left.right = new TreeNode(50);
+		root.right = new TreeNode(30);
+		root.right.right = new TreeNode(70);
 
 		Optional<List<List<Integer>>> actualLevelOrder = traversal.getLevelOrderBreadthFirstTraversal(root);
 		List<List<Integer>> expectedOrder = Arrays.asList(

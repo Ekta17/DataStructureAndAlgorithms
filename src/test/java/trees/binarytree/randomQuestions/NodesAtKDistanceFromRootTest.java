@@ -1,6 +1,7 @@
-package trees.binarytree.randomQuestions.TreeCreation;
+package trees.binarytree.randomQuestions;
 
 import org.junit.jupiter.api.Test;
+import trees.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;

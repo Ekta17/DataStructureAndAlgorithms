@@ -1,4 +1,6 @@
-package trees.binarytree.randomQuestions.TreeCreation;
+package trees.binarytree.randomQuestions;
+
+import trees.binarytree.TreeNode;
 
 public class HeightOfBinaryTree {
 
