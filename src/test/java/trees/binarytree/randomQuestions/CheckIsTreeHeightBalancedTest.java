@@ -5,9 +5,9 @@ import trees.binarytree.TreeNode;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CheckIsTreeIsBalancedTest {
+class CheckIsTreeHeightBalancedTest {
 
-	CheckIsTreeIsBalanced checkIsTreeIsBalanced = new CheckIsTreeIsBalanced();
+	CheckIsTreeHeightBalanced checkIsTreeHeightBalanced = new CheckIsTreeHeightBalanced();
 
 	@Test
 	public void testIfTreeIsBalanced_1(){
@@ -17,7 +17,7 @@ class CheckIsTreeIsBalancedTest {
 		root.left.left = new TreeNode(13);
 		root.left.right = new TreeNode(70);
 
-		assertTrue(checkIsTreeIsBalanced.isBalanced(root));
+		assertTrue(checkIsTreeHeightBalanced.isBalanced(root));
 	}
 
 	@Test
@@ -26,7 +26,7 @@ class CheckIsTreeIsBalancedTest {
 		root.left = new TreeNode(4);
 		root.left.left = new TreeNode(5);
 
-		assertFalse(checkIsTreeIsBalanced.isBalanced(root));
+		assertFalse(checkIsTreeHeightBalanced.isBalanced(root));
 	}
 
 	@Test
@@ -39,7 +39,7 @@ class CheckIsTreeIsBalancedTest {
 		root.right.right = new TreeNode(7);
 		root.right.right.left = new TreeNode(6);
 
-		assertFalse(checkIsTreeIsBalanced.isBalanced(root));
+		assertFalse(checkIsTreeHeightBalanced.isBalanced(root));
 	}
 
 	@Test
@@ -53,6 +53,6 @@ class CheckIsTreeIsBalancedTest {
 		root.left.right.right = new TreeNode(10);
 		root.right.left = new TreeNode(5);
 
-		assertTrue(checkIsTreeIsBalanced.isBalanced(root));
+		assertTrue(checkIsTreeHeightBalanced.isBalanced(root));
 	}
 }

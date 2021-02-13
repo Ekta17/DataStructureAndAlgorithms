@@ -4,7 +4,7 @@ import trees.binarytree.TreeNode;
 
 //Tree is said to be balanced if the difference between
 //height of left subtree and right subtree is less than equal to 1
-public class CheckIsTreeIsBalanced {
+public class CheckIsTreeHeightBalanced {
 	HeightOfBinaryTree heightOfBinaryTree = new HeightOfBinaryTree();
 
 	public boolean isBalanced(TreeNode root) {
