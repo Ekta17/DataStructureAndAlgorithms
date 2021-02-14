@@ -50,7 +50,6 @@ class DoublyLinkedListNode {
 			sb.append("next="+ next.data);
 		else
 			sb.append("next is null");
-		System.out.println();
 
 		return sb.toString();
 	}
