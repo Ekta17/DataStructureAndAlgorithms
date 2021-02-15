@@ -15,9 +15,9 @@ public class DetectCycleInDirectedGraph {
 	}
 
 	private boolean isCyclic(Node n, boolean[] recursionStack){
-		if(recursionStack[n.data])
+		if(recursionStack[n.data] == true)
 			return true;
-		if(n.isVisited)
+		if(n.isVisited == true)
 			return false;
 
 		n.isVisited= true;
