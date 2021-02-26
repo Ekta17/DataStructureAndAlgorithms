@@ -5,9 +5,8 @@ import java.util.Set;
 
 /**
  * Given an array of positive and negative numbers,
- * find if there is a subarray (of size at-least one) with 0 sum.
+ * find if there is a subarray (of size at-least one) with given sum.
  * <p>
- * https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/
  */
 public class GivenSumSubarray {
 
