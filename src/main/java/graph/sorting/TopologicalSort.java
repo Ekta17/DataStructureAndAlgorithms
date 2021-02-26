@@ -18,16 +18,15 @@ public class TopologicalSort {
 		}
 
 		List<Node> topologicalOrder = new ArrayList<>(sortedNodes.size());
-		while(!sortedNodes.isEmpty())
+		while (!sortedNodes.isEmpty())
 			topologicalOrder.add(sortedNodes.pop());
 		return topologicalOrder;
 	}
 
 	public void visitNode(Stack<Node> sortedNodes, Node n) {
-		if (!n.isVisited) {
-			if (n.children != null) {
-				for (int i = 0; i < n.children.size(); i++)
-					visitNode(sortedNodes, n.children.get(i));
+		if (n.isVisited == false) {
+			for(Node child: n.children){
+				visitNode(sortedNodes, child);
 			}
 			n.isVisited = true;
 			sortedNodes.push(n);

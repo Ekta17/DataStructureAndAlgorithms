@@ -70,7 +70,7 @@ public class BinarySearch {
             i *= 2;
         if(num[i] == key)
             return i;
-        else //Element should be present in the range of i/2 - i as while loop ended
+        else //Element should be present in the range of i/2 to i as while loop ended
             return findIndexOfKeyIfExists(num, i/2, i, key);
     }
 
