@@ -11,17 +11,18 @@ import java.util.Set;
  * distinct common elements between the two arrays.
  */
 public class IntersectionOfTwoArrays {
+
   int numberofElementsInIntersection(int a[], int b[]) {
+
     Set<Integer> elements = new HashSet<>();
     int countOfCommonElements = 0;
 
-    for (int i = 0; i < a.length; i++) {
+    for (int i = 0; i < a.length; i++)
       elements.add(a[i]);
-    }
 
-    for (int i = 0; i < b.length; i++) {
+    for (int i = 0; i < b.length; i++)
       if (elements.contains(b[i])) countOfCommonElements++;
-    }
+
     return countOfCommonElements;
   }
 }
