@@ -30,17 +30,18 @@ public class FirstRepeatingElement {
       if (frequencyMap.containsKey(arr[i])) {
         value = frequencyMap.get(arr[i]);
         value = new Pair<>(value.getKey() + 1, value.getValue());
-      } else
-        value = new Pair<>(1, i);
+      } else value = new Pair<>(1, i);
 
       frequencyMap.put(arr[i], value);
     }
 
-    int firstRepeatingElement = frequencyMap.entrySet().stream().filter(x -> x.getValue().getKey() > 1).map(x -> x.getValue().getValue()).findFirst().orElse(-1);
+    int firstRepeatingElement =
+        frequencyMap.entrySet().stream()
+            .filter(x -> x.getValue().getKey() > 1)
+            .map(x -> x.getValue().getValue())
+            .findFirst()
+            .orElse(-1);
 
-    return
-            firstRepeatingElement == -1 ?
-                    firstRepeatingElement :
-                    firstRepeatingElement + 1;
+    return firstRepeatingElement == -1 ? firstRepeatingElement : firstRepeatingElement + 1;
   }
 }

@@ -10,7 +10,7 @@ class FirstRepeatingElementTest {
   private static FirstRepeatingElement firstRepeatingElement;
 
   @BeforeAll
-  public static void init(){
+  public static void init() {
     firstRepeatingElement = new FirstRepeatingElement();
   }
 
@@ -20,11 +20,9 @@ class FirstRepeatingElementTest {
     assertEquals(2, firstRepeatingElement.firstRepeated(arr));
   }
 
-
   @Test
   void testFirstRepeatedWhenNotRepeating() {
-    int[] arr = { 1, 2,3, 4};
+    int[] arr = {1, 2, 3, 4};
     assertEquals(-1, firstRepeatingElement.firstRepeated(arr));
   }
-
 }
