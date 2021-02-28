@@ -1,5 +1,6 @@
 package arrays;
 
+import arrays.prefixsum.PrefixSum;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
