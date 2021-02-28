@@ -1,0 +1,10 @@
+# Ignore the node_modules directory
+build/
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore IDE specific files
+.idea/
+.gradle/

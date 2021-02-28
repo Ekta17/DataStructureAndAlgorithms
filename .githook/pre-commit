@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+GOOGLE_STYLE_FORMATTER=/c/Users/ektaa/e_drive/study/CodeFormatting/google-java-format-1.7-all-deps.jar
+
+if [[ ! -f $GOOGLE_STYLE_FORMATTER ]]
+then
+    echo 'Google Style formatting jar file missing'
+fi
+
+changed_java_files=$(git diff --cached --name-only --diff-filter=ACMR | grep ".*java$" || true)
+if [[ -n "$changed_java_files" ]]
+then
+    echo "Reformatting Java files: $changed_java_files"
+    java -jar "$GOOGLE_STYLE_FORMATTER" --replace $changed_java_files
+else
+    echo "No Java files changes found."
+fi
