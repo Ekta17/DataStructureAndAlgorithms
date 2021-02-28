@@ -23,7 +23,7 @@ class FirstRepeatingElementTest {
 
   @Test
   void testFirstRepeatedWhenNotRepeating() {
-    int[] arr = {1,2,3, 4};
+    int[] arr = { 1, 2,3, 4};
     assertEquals(-1, firstRepeatingElement.firstRepeated(arr));
   }
 

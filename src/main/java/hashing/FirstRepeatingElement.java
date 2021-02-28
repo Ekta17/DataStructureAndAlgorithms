@@ -38,6 +38,9 @@ public class FirstRepeatingElement {
 
     int firstRepeatingElement = frequencyMap.entrySet().stream().filter(x -> x.getValue().getKey() > 1).map(x -> x.getValue().getValue()).findFirst().orElse(-1);
 
-    return firstRepeatingElement == -1 ? firstRepeatingElement : firstRepeatingElement + 1;
+    return
+            firstRepeatingElement == -1 ?
+                    firstRepeatingElement :
+                    firstRepeatingElement + 1;
   }
 }
