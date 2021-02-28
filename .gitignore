@@ -8,3 +8,4 @@ logs
 # Ignore IDE specific files
 .idea/
 .gradle/
+.githook/
