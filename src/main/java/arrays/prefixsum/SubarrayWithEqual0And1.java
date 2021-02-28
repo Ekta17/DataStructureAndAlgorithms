@@ -3,7 +3,6 @@ package arrays.prefixsum;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Given a binary array,
  * find the length of largest subarray with equal number of 0 and 1
@@ -14,7 +13,7 @@ import java.util.Map;
  */
 public class SubarrayWithEqual0And1 {
 
-	//function to find the length of the longest subarray with equal number of 1 and 0
+	//function to find the length of the longest sub array with equal number of 1 and 0
 	public int getLength(int[] arr) {
 
 		Map<Integer, Integer> sumMap = new HashMap<>();
