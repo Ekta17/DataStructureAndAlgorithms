@@ -17,11 +17,9 @@ public class IntersectionOfTwoArrays {
     Set<Integer> elements = new HashSet<>();
     int countOfCommonElements = 0;
 
-    for (int i = 0; i < a.length; i++)
-      elements.add(a[i]);
+    for (int i = 0; i < a.length; i++) elements.add(a[i]);
 
-    for (int i = 0; i < b.length; i++)
-      if (elements.contains(b[i])) countOfCommonElements++;
+    for (int i = 0; i < b.length; i++) if (elements.contains(b[i])) countOfCommonElements++;
 
     return countOfCommonElements;
   }
