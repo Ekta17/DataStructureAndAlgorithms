@@ -9,9 +9,13 @@ import java.util.Map;
  * Given an array arr[] of size N, find the first repeating element. The element should occurs more
  * than once and the index of its first occurrence should be the smallest. You don't need to read
  * input or print anything. Complete the function firstRepeated() which takes arr and N as input
- * parameters and return the position of the first repeating element. If there is no such element,
- * return -1. The position you return should be according to 1-based indexing. Expected Time
- * Complexity: O(NlogN) Expected Auxilliary Space: O(N)
+ * parameters and return the position of the first repeating element.
+ *
+ * If there is no such element,return -1.
+ * The position you return should be according to 1-based indexing.
+ *
+ * Expected Time Complexity: O(NlogN)
+ * Expected Auxilliary Space: O(N)
  */
 public class FirstRepeatingElement {
 
