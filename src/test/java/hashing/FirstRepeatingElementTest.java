@@ -1,8 +1,8 @@
 package hashing;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 class FirstRepeatingElementTest {
   FirstRepeatingElement firstRepeatingElement = new FirstRepeatingElement();
