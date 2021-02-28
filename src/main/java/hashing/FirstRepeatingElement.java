@@ -1,8 +1,9 @@
 package hashing;
 
+import javafx.util.Pair;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javafx.util.Pair;
 
 /**
  * Given an array arr[] of size N, find the first repeating element. The element should occurs more
@@ -28,12 +29,7 @@ public class FirstRepeatingElement {
       frequencyMap.put(arr[i], value);
     }
 
-    int firstRepeatingElement =
-        frequencyMap.entrySet().stream()
-            .filter(x -> x.getValue().getKey() > 1)
-            .map(x -> x.getValue().getValue())
-            .findFirst()
-            .orElse(-1);
+    int firstRepeatingElement =frequencyMap.entrySet().stream().filter(x -> x.getValue().getKey() > 1).map(x -> x.getValue().getValue()).findFirst().orElse(-1);
 
     return firstRepeatingElement == -1 ? firstRepeatingElement : firstRepeatingElement + 1;
   }
