@@ -24,11 +24,15 @@ public class FirstRepeatingElement {
     Map<Integer, Pair<Integer, Integer>> frequencyMap = new LinkedHashMap<>();
     int frequency = 0;
     Pair<Integer, Integer> value;
+
     for (int i = 0; i < arr.length; i++) {
+
       if (frequencyMap.containsKey(arr[i])) {
         value = frequencyMap.get(arr[i]);
         value = new Pair<>(value.getKey() + 1, value.getValue());
-      } else value = new Pair<>(1, i);
+      } else
+        value = new Pair<>(1, i);
+
       frequencyMap.put(arr[i], value);
     }
 
