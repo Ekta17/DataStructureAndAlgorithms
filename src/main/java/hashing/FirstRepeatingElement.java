@@ -11,11 +11,10 @@ import java.util.Map;
  * input or print anything. Complete the function firstRepeated() which takes arr and N as input
  * parameters and return the position of the first repeating element.
  *
- * If there is no such element,return -1.
- * The position you return should be according to 1-based indexing.
+ * <p>If there is no such element,return -1. The position you return should be according to 1-based
+ * indexing.
  *
- * Expected Time Complexity: O(NlogN)
- * Expected Auxilliary Space: O(N)
+ * <p>Expected Time Complexity: O(NlogN) Expected Auxilliary Space: O(N)
  */
 public class FirstRepeatingElement {
 
@@ -33,7 +32,7 @@ public class FirstRepeatingElement {
       frequencyMap.put(arr[i], value);
     }
 
-    int firstRepeatingElement =frequencyMap.entrySet().stream().filter(x -> x.getValue().getKey() > 1).map(x -> x.getValue().getValue()).findFirst().orElse(-1);
+    int firstRepeatingElement = frequencyMap.entrySet().stream().filter(x -> x.getValue().getKey() > 1).map(x -> x.getValue().getValue()).findFirst().orElse(-1);
 
     return firstRepeatingElement == -1 ? firstRepeatingElement : firstRepeatingElement + 1;
   }
