@@ -2,6 +2,12 @@ package hashing;
 
 import java.util.*;
 
+/**
+ * Given an array A[] of integers, sort the array according to frequency of elements. That is
+ * elements that have higher frequency come first. If frequencies of two elements are same, then
+ * smaller number comes first.
+ * https://javaconceptoftheday.com/sort-array-elements-by-frequency-in-java/
+ */
 public class SortingArrayBasedOnFrequency {
 
   public int[] sort(int[] arr) {
