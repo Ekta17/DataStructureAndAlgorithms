@@ -1,8 +1,8 @@
 package hashing;
 
+import java.util.AbstractMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javafx.util.Pair;
 
 /**
  * Given an array arr[] of size N, find the first repeating element. The element should occurs more
@@ -20,16 +20,16 @@ public class FirstRepeatingElement {
   int firstRepeated(int arr[]) {
 
     // Map --> key = element of array, Value = Pair<Frequency, Index position in array>
-    Map<Integer, Pair<Integer, Integer>> frequencyMap = new LinkedHashMap<>();
+    Map<Integer, AbstractMap.SimpleEntry<Integer, Integer>> frequencyMap = new LinkedHashMap<>();
     int frequency = 0;
-    Pair<Integer, Integer> value;
+    AbstractMap.SimpleEntry<Integer, Integer> value;
 
     for (int i = 0; i < arr.length; i++) {
 
       if (frequencyMap.containsKey(arr[i])) {
         value = frequencyMap.get(arr[i]);
-        value = new Pair<>(value.getKey() + 1, value.getValue());
-      } else value = new Pair<>(1, i);
+        value = new AbstractMap.SimpleEntry<>(value.getKey()+1, value.getValue());
+      } else value = new AbstractMap.SimpleEntry<>(1, i);
 
       frequencyMap.put(arr[i], value);
     }

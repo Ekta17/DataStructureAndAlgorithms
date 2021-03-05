@@ -2,10 +2,10 @@ package graph.randomquestions;
 
 import graph.Graph;
 import graph.TestHelper;
-import javafx.util.Pair;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +24,7 @@ class ShortestPathInUnweightedGraphTest implements TestHelper {
 	@Test
 	public void testShortedPath(){
 		Graph graph = createUndirectedAcyclicGraph();
-		Optional<Pair<Integer, List<Integer>>> actualPath =
+		Optional<AbstractMap.SimpleEntry<Integer, List<Integer>>> actualPath =
 				shortestPathInUnweightedGraph
 						.getShortestPathFromSource(graph, graph.nodes.get(0), graph.nodes.get(graph.nodes.size()-1));
 

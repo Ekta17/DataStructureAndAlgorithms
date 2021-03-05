@@ -2,16 +2,12 @@ package graph.randomquestions;
 
 import graph.Graph;
 import graph.Node;
-import javafx.util.Pair;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Queue;
+import java.util.*;
 
 public class ShortestPathInUnweightedGraph {
 
-	public Optional<Pair<Integer, List<Integer>>> getShortestPathFromSource(Graph graph, Node source, Node destination) {
+	public Optional<AbstractMap.SimpleEntry<Integer, List<Integer>>> getShortestPathFromSource(Graph graph, Node source, Node destination) {
 		int[] predecessor = new int [graph.nodes.size()]; //Predecessor of i
 		int[] distance = new int [graph.nodes.size()]; //distance of i from source
 
@@ -25,7 +21,7 @@ public class ShortestPathInUnweightedGraph {
 			crawl = predecessor[crawl];
 		}
 
-		Pair<Integer, List<Integer>> shortestPathDetails = new Pair<>(distance[destination.data], path);
+		AbstractMap.SimpleEntry<Integer, List<Integer>> shortestPathDetails = new AbstractMap.SimpleEntry<>(distance[destination.data], path);
 		return Optional.of(shortestPathDetails);
 	}
 
